@@ -46,7 +46,7 @@ export default function MarketAnomalyDetectionCaseStudy() {
               </div>
             </div>
 
-            <div className="relative aspect-[4/3] rounded-none overflow-hidden border border-border">
+            <div className="relative aspect-[18/10] rounded-none overflow-hidden border border-border">
               <Image
                 src="/ai-solutions/cover.png"
                 alt="Market Anomaly Detection System"

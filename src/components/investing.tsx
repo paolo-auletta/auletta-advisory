@@ -170,7 +170,7 @@ export function Investing() {
 
         {/* Mobile: Startup List */}
         <div className="md:hidden">
-          <div className="border border-border rounded-lg overflow-hidden bg-white">
+          <div className="border border-border overflow-hidden bg-white">
             {displayedInvestments.map((investment, index) => (
               <div
                 key={investment.id}

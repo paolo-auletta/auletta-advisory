@@ -50,13 +50,17 @@ export function Navbar() {
 
   const handleNavSelect = (label: string, href: string) => {
     setActiveLink(label)
-    setIsMenuOpen(false)
     
     if (href.startsWith("#")) {
-      const element = document.querySelector(href)
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" })
-      }
+      setIsMenuOpen(false)
+      setTimeout(() => {
+        const element = document.querySelector(href)
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" })
+        }
+      }, 300)
+    } else {
+      setIsMenuOpen(false)
     }
   }
 
@@ -73,7 +77,7 @@ export function Navbar() {
     >
       <div className="mx-auto w-full max-w-7xl">
         {/* Desktop Navigation */}
-        <div className="hidden items-center justify-between bg-background/95 px-6 py-3 shadow-lg backdrop-blur-sm border border-border sm:flex">
+        <div className="hidden items-center justify-between bg-background/95 px-6 py-3 shadow-md backdrop-blur-sm border border-border sm:flex">
           <div className="flex items-center gap-3">
             <Link href="/" className="text-xl font-medium text-foreground">
               AulettaAdvisory
@@ -114,7 +118,7 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         <div className="sm:hidden">
-          <div className="bg-background/95 px-5 py-3 shadow-lg backdrop-blur-sm border border-border transition-all">
+          <div className="bg-background/95 px-5 py-3 shadow-md backdrop-blur-sm border border-border transition-all">
             <div className="flex items-center justify-between">
               <Link href="/" className="text-lg font-medium text-foreground">
                 AulettaAdvisory

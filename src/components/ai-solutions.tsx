@@ -36,7 +36,7 @@ export function AISolutions() {
                   src="/ai-solutions/cover.png"
                   alt="Market Anomaly Detection System"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
 

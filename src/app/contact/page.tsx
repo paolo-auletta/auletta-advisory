@@ -111,7 +111,7 @@ function ContactPageContent() {
   const selectedServices = form.watch("services")
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen my-12">
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-24 md:py-32">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
