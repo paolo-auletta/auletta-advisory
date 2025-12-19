@@ -1,25 +1,26 @@
 "use client"
 
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 const services = [
   {
     number: "1",
     title: "Advisory",
     description:
-      "Strategic guidance for M&A transactions and venture capital fundraising. We help tech companies navigate complex deals with deep market expertise.",
+      "Strategic M&A advisory for highly regulated industries. We operate at the vital intersection of Business Strategy, Compliance, and Regulatory Frameworks.",
   },
   {
     number: "2",
     title: "Investing",
     description:
-      "Angel investment and mentorship for early-stage startups. Access to an international portfolio network and hands-on support for founders.",
+      "Venture builder and early-stage investor (Pre-Seed to Series A) managing a diverse international portfolio",
   },
   {
     number: "3",
     title: "AI Solutions",
     description:
-      "Deep learning infrastructure and AI implementation services. We architect and deploy cutting-edge solutions tailored to your business needs.",
+      "Strategic AI/ML experts dedicated to driving cross-sector innovation by deploying scalable intelligence into highly regulated sectors like finance and healthcare",
   },
 ]
 
@@ -30,13 +31,19 @@ export function Services() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-16 md:mb-24">
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-foreground leading-tight">
-              Our comprehensive suite of{" "}
-              <span className="italic">services</span> are crafted to meet the
-              needs of our clients.
+              Tailored for excellence, our suite of{" "}
+              <span className="italic font-bold">services</span> is built to meet the rigorous standards of our premier clientele.
             </h2>
           </div>
-          <div className="flex items-end">
-            <div className="w-full aspect-[4/3] bg-muted rounded-lg" />
+          <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-border">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+            <Image
+              src="/images/landscape.jpg"
+              alt="Market Anomaly Detection System"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
 
@@ -50,7 +57,7 @@ export function Services() {
                   <span
                     className={cn(
                       "inline-flex items-center justify-center w-8 h-8 rounded-full text-sm font-medium",
-                      "bg-foreground text-background"
+                      "bg-accent text-accent-foreground"
                     )}
                   >
                     {service.number}

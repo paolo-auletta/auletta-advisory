@@ -109,7 +109,7 @@ export function Navbar() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center bg-foreground text-background hover:bg-foreground/90 px-5 py-2 text-sm font-medium shadow-md transition-all hover:shadow-lg"
+              className="inline-flex items-center bg-accent text-accent-foreground hover:bg-accent/90 px-5 py-2 text-sm font-medium shadow-md transition-all hover:shadow-lg"
             >
               Contact Us
             </Link>
@@ -187,7 +187,7 @@ export function Navbar() {
                     <div className="mt-5">
                       <Link
                         href="/contact"
-                        className="inline-flex w-full items-center justify-center bg-foreground px-4 py-3 text-base font-medium text-background shadow-md transition-all hover:bg-foreground/90"
+                        className="inline-flex w-full items-center justify-center bg-accent px-4 py-3 text-base font-medium text-accent-foreground shadow-md transition-all hover:bg-accent/90"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Contact Us

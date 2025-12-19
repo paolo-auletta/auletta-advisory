@@ -159,7 +159,7 @@ export default function MarketAnomalyDetectionCaseStudy() {
               </div>
             </div>
             
-            <div className="space-y-6">
+            <div className="space-y-6 my-auto">
               {/* Financial Indicators Breakdown */}
               <div className="bg-muted/30 border border-border rounded-none p-8">
                 <h4 className="text-lg font-semibold text-foreground mb-6">
@@ -261,8 +261,8 @@ export default function MarketAnomalyDetectionCaseStudy() {
           {/* Preprocessing Pipeline */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             <div className="bg-background border border-border rounded-none p-8">
-              <div className="w-12 h-12 rounded-none bg-foreground flex items-center justify-center mb-6">
-                <span className="text-xl font-semibold text-background">1</span>
+              <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center mb-6">
+                <span className="text-sm font-semibold text-background">1</span>
               </div>
               <h4 className="text-xl font-semibold text-foreground mb-4">
                 Data Preprocessing
@@ -284,8 +284,8 @@ export default function MarketAnomalyDetectionCaseStudy() {
             </div>
 
             <div className="bg-background border border-border rounded-none p-8">
-              <div className="w-12 h-12 rounded-none bg-foreground flex items-center justify-center mb-6">
-                <span className="text-xl font-semibold text-background">2</span>
+              <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center mb-6">
+                <span className="text-sm font-semibold text-background">2</span>
               </div>
               <h4 className="text-xl font-semibold text-foreground mb-4">
                 Anomaly Detection
@@ -307,8 +307,8 @@ export default function MarketAnomalyDetectionCaseStudy() {
             </div>
 
             <div className="bg-background border border-border rounded-none p-8">
-              <div className="w-12 h-12 rounded-none bg-foreground flex items-center justify-center mb-6">
-                <span className="text-xl font-semibold text-background">3</span>
+              <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center mb-6">
+                <span className="text-sm font-semibold text-background">3</span>
               </div>
               <h4 className="text-xl font-semibold text-foreground mb-4">
                 Risk Group Analysis
@@ -518,7 +518,7 @@ export default function MarketAnomalyDetectionCaseStudy() {
               </div>
             </div>
 
-            <div>
+            <div className="my-auto">
               {/* Performance Metrics */}
               <div className="bg-background border border-border rounded-none p-8 md:p-10">
                 <h4 className="text-xl font-semibold text-foreground mb-8">
@@ -728,38 +728,6 @@ export default function MarketAnomalyDetectionCaseStudy() {
                 Implement an active learning workflow for continuous model refinement as new 
                 market data arrives. This would keep the model current with evolving market dynamics.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-24 md:py-32 border-t border-border">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
-          <div className="mb-12">
-            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-6">
-              Project Team
-            </h2>
-            <h3 className="text-2xl md:text-3xl font-medium tracking-tight text-foreground mb-6">
-              Research & Development
-            </h3>
-          </div>
-
-          <div className="flex flex-wrap gap-4">
-            <div className="px-6 py-3 bg-background border border-border rounded-none">
-              <p className="text-sm font-medium text-foreground">Sara Auletta</p>
-            </div>
-            <div className="px-6 py-3 bg-background border border-border rounded-none">
-              <p className="text-sm font-medium text-foreground">Riccardo Besana</p>
-            </div>
-            <div className="px-6 py-3 bg-background border border-border rounded-none">
-              <p className="text-sm font-medium text-foreground">Francesco Colombo</p>
-            </div>
-            <div className="px-6 py-3 bg-background border border-border rounded-none">
-              <p className="text-sm font-medium text-foreground">Giulia Di Vincenzo</p>
-            </div>
-            <div className="px-6 py-3 bg-background border border-border rounded-none">
-              <p className="text-sm font-medium text-foreground">Benedetta Gnugnoli</p>
             </div>
           </div>
         </div>

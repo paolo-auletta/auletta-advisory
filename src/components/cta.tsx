@@ -26,7 +26,7 @@ export function CTA() {
             <Button
               asChild
               size="lg"
-              className="group h-12 px-6 text-base font-medium rounded-none bg-background text-foreground hover:bg-background/90 transition-all"
+              className="group h-12 px-6 text-base font-medium rounded-none bg-accent text-accent-foreground hover:bg-accent/90 transition-all"
             >
               <Link href="/contact">
                 Contact Us

@@ -160,9 +160,8 @@ export function Investing() {
             </h3>
             <div className="flex flex-col justify-end">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We invest in exceptional founders building transformative companies 
-                across the US, UK, Italy, and Israel. Our hands-on approach combines 
-                capital with strategic guidance and access to our international network.
+                We invest in exceptional founders building transformative companies across the US, Europe, far and middle east. 
+                Our approach fuses strategic capital and operational mentorship with elite-tier access to the private equity ecosystem.
               </p>
             </div>
           </div>
@@ -245,7 +244,7 @@ export function Investing() {
             asChild
             variant="outline"
             size="lg"
-            className="group h-12 px-6 text-base font-medium rounded-none border-foreground/20 hover:bg-foreground hover:text-background transition-all"
+            className="group h-12 px-6 text-base font-medium rounded-none border-accent/30 hover:bg-accent hover:text-accent-foreground transition-all"
           >
             <Link href="/contact?service=investing">
               Explore Investment Opportunities

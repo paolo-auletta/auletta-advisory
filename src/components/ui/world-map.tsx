@@ -26,7 +26,7 @@ interface WorldMapProps {
 
 export default function WorldMap({
   investments = [],
-  dotColor = "#2B7FFF",
+  dotColor = "#3B4C74",
 }: WorldMapProps) {
   const svgRef = useRef<SVGSVGElement>(null)
   const [selectedInvestment, setSelectedInvestment] = useState<Investment | null>(null)
@@ -66,7 +66,7 @@ export default function WorldMap({
       {/* Map container with overflow hidden */}
       <div className="absolute inset-0 bg-gradient-to-b from-white to-muted/20 rounded-lg shadow-lg overflow-hidden">
         <Image
-          src="/world-map.png"
+          src="/world-map.svg"
           alt="world map"
           fill
           className="object-cover pointer-events-none select-none"
@@ -95,7 +95,7 @@ export default function WorldMap({
                 cy={point.y}
                 r="4"
                 fill={dotColor}
-                className="cursor-pointer hover:fill-blue-600 transition-colors"
+                className="cursor-pointer hover:fill-[#263864] transition-colors"
                 onClick={() => handleDotClick(investment)}
               />
               <circle

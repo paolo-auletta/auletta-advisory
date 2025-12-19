@@ -5,6 +5,36 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowUpRight, TrendingUp, Clock, CheckCircle2 } from "lucide-react"
 
+const capabilities = [
+  {
+    label: "THE SHIELD",
+    title: "Regulatory-First AI Governance",
+    description:
+      "While most firms treat compliance as an afterthought, we bake Regulatory Frameworks into the development lifecycle. This capability ensures that every model deployed is \"Audit-Ready\" from day one.",
+    highlight: "Regulatory Frameworks",
+    value:
+      "We eliminate the \"compliance bottleneck,\" allowing our clients to move from pilot to production faster than competitors.",
+  },
+  {
+    label: "THE ENGINE",
+    title: "Scalable ML Intelligence in High-Stakes Environments",
+    description:
+      "We bridge the gap between \"Lab AI\" and \"Enterprise AI.\" Our expertise lies in deploying scalable ML architectures specifically designed for the data sensitivities of finance and healthcare.",
+    highlight: "scalable ML architectures",
+    value:
+      "We ensure AI doesn't just work in a demo—it scales across global operations without compromising data integrity or system stability, providing a robust foundation for long-term innovation.",
+  },
+  {
+    label: "THE MULTIPLIER",
+    title: "Strategic Value & M&A Engineering",
+    description:
+      "Leveraging our background as Venture Builders and M&A Advisors, we ensure AI adoption is tied directly to the balance sheet. We don't just look for \"cool\" use cases; we look for \"valuable\" ones that increase enterprise value.",
+    highlight: "Venture Builders and M&A Advisors",
+    value:
+      "We optimize technical debt and IP portfolio, ensuring that AI investments make the company more attractive for future M&A activity, partnerships, or public offerings.",
+  },
+]
+
 export function AISolutions() {
   return (
     <section id="ai-solutions" className="py-24 md:py-32 bg-background">
@@ -14,9 +44,10 @@ export function AISolutions() {
             AI Solutions
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
-            We architect and deploy cutting-edge AI and deep learning infrastructure 
-            tailored to your business needs. From computer vision to natural language 
-            processing, we transform complex challenges into scalable solutions.
+            We bridge the gap between AI potential and regulatory reality. 
+            Our advisory services empower corporates to transform complex compliance 
+            hurdles into competitive moats by deploying scalable, audit-ready AI strategies 
+            that drive immediate operational value.
           </p>
         </div>
 
@@ -65,21 +96,21 @@ export function AISolutions() {
                 <div className="grid grid-cols-3 gap-6 mb-8 pb-8 border-b border-border">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <CheckCircle2 className="h-4 w-4 text-foreground" />
+                      <CheckCircle2 className="h-4 w-4 text-accent" />
                       <span className="text-2xl font-semibold text-foreground">90%</span>
                     </div>
                     <p className="text-xs text-muted-foreground">F1 Score</p>
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <TrendingUp className="h-4 w-4 text-foreground" />
+                      <TrendingUp className="h-4 w-4 text-accent" />
                       <span className="text-2xl font-semibold text-foreground">99%</span>
                     </div>
                     <p className="text-xs text-muted-foreground">Recall</p>
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <Clock className="h-4 w-4 text-foreground" />
+                      <Clock className="h-4 w-4 text-accent" />
                       <span className="text-2xl font-semibold text-foreground">43</span>
                     </div>
                     <p className="text-xs text-muted-foreground">Indicators</p>
@@ -90,7 +121,7 @@ export function AISolutions() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="group h-11 px-6 text-sm font-medium rounded-none border-foreground/20 hover:bg-foreground hover:text-background transition-all w-fit"
+                  className="group h-11 px-6 text-sm font-medium rounded-none border-accent/30 hover:bg-accent hover:text-accent-foreground transition-all w-fit"
                 >
                   <Link href="/case-studies/market-anomaly-detection">
                     Read Full Case Study
@@ -109,35 +140,38 @@ export function AISolutions() {
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-background border border-border rounded-none p-8 md:p-10 transition-all duration-300 hover:border-foreground/30 hover:shadow-sm">
-              <h4 className="text-xl font-semibold text-foreground mb-4 tracking-tight">
-                Machine Learning
-              </h4>
-              <p className="text-muted-foreground leading-relaxed text-[15px]">
-                Custom ML models for prediction, classification, and anomaly detection. 
-                From traditional algorithms to deep learning architectures.
-              </p>
-            </div>
-
-            <div className="bg-background border border-border rounded-none p-8 md:p-10 transition-all duration-300 hover:border-foreground/30 hover:shadow-sm">
-              <h4 className="text-xl font-semibold text-foreground mb-4 tracking-tight">
-                Computer Vision
-              </h4>
-              <p className="text-muted-foreground leading-relaxed text-[15px]">
-                Image recognition, object detection, and video analysis systems. 
-                Deployed at scale with real-time inference capabilities.
-              </p>
-            </div>
-
-            <div className="bg-background border border-border rounded-none p-8 md:p-10 transition-all duration-300 hover:border-foreground/30 hover:shadow-sm">
-              <h4 className="text-xl font-semibold text-foreground mb-4 tracking-tight">
-                NLP & LLMs
-              </h4>
-              <p className="text-muted-foreground leading-relaxed text-[15px]">
-                Natural language processing, sentiment analysis, and large language model 
-                integration for intelligent automation.
-              </p>
-            </div>
+            {capabilities.map((capability) => {
+              const descriptionParts = capability.description.split(capability.highlight)
+              
+              return (
+                <div
+                  key={capability.label}
+                  className="bg-background border border-border rounded-none p-8 md:p-10 transition-all duration-300 hover:border-foreground/30 hover:shadow-sm"
+                >
+                  <div className="mb-6">
+                    <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-2 block">
+                      {capability.label}
+                    </span>
+                    <h4 className="text-2xl font-semibold text-foreground tracking-tight">
+                      {capability.title}
+                    </h4>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed text-[15px] mb-6">
+                    {descriptionParts[0]}
+                    <span className="font-medium text-foreground">{capability.highlight}</span>
+                    {descriptionParts[1]}
+                  </p>
+                  <div className="border-t border-border pt-5 mt-auto">
+                    <h5 className="text-xs font-semibold text-foreground uppercase tracking-wider mb-3">
+                      Value Created
+                    </h5>
+                    <p className="text-muted-foreground text-[14px] leading-relaxed">
+                      {capability.value}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
 
@@ -146,7 +180,7 @@ export function AISolutions() {
             asChild
             variant="outline"
             size="lg"
-            className="group h-12 px-6 text-base font-medium rounded-none border-foreground/20 hover:bg-foreground hover:text-background transition-all"
+            className="group h-12 px-6 text-base font-medium rounded-none border-accent/30 hover:bg-accent hover:text-accent-foreground transition-all"
           >
             <Link href="/contact?service=ai-solutions">
               Discuss Your AI Challenge

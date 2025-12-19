@@ -3,6 +3,7 @@
  import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowUpRight, TrendingUp, Handshake, Target } from "lucide-react"
+import Image from "next/image"
 
 const stats = [
   {
@@ -10,15 +11,15 @@ const stats = [
     label: "Companies Advised",
   },
   {
-    value: "€2B+",
+    value: "€2.5B+",
     label: "Deal Value",
   },
   {
-    value: "30+",
+    value: "10+",
     label: "Transactions",
   },
   {
-    value: "15+",
+    value: "35+",
     label: "Years Experience",
   },
   {
@@ -86,9 +87,15 @@ export function Advisory() {
         {/* Two Column: Image + Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-20 md:mb-28">
           <div className="relative">
-            <div className="aspect-[4/3] bg-gradient-to-br from-muted to-muted/50 rounded-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-[url('/placeholder-advisory.jpg')] bg-cover bg-center" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-border">
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/50 to-transparent z-10" />
+              <Image
+                src="/images/man.jpg"
+                alt="Market Anomaly Detection System"
+                fill
+                className="object-cover rounded-lg"
+                priority
+              />
             </div>
           </div>
           <div className="flex flex-col justify-center">
@@ -96,14 +103,12 @@ export function Advisory() {
               Trusted partner for founders and executives navigating critical moments
             </h4>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              With over 15 years of experience in European tech M&A and venture capital, 
-              we bring institutional-grade expertise to every engagement. Our team has 
-              advised on transactions across fintech, healthtech, SaaS, and deep tech sectors.
+              With over 35 years of experience in Strategic Advisory, tech M&A and venture capital, we bring institutional-grade expertise to every engagement. 
+              Our team has advised on transactions across fintech, healthtech, Digital Trust, Energy and deep tech sectors.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              We work closely with founders from initial strategy through deal close, 
-              providing hands-on support at every stage. Our network spans leading VCs, 
-              corporate acquirers, and family offices across Europe and the US.
+              We work closely with founders from initial strategy through deal close, providing hands-on support at every stage. 
+              Our network spans leading VCs, corporate acquirers, and family offices across Europe and the US.
             </p>
           </div>
         </div>
@@ -117,11 +122,11 @@ export function Advisory() {
             {services.map((service) => (
               <div 
                 key={service.title} 
-                className="group relative bg-background border border-border rounded-none p-8 md:p-10 transition-all duration-300 hover:border-foreground/30 hover:shadow-sm"
+                className="group relative bg-background border border-border rounded-none p-8 md:p-10 transition-all duration-300 hover:shadow-sm"
               >
                 <div className="flex flex-col h-full">
-                  <div className="w-12 h-12 rounded-none bg-foreground flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-105">
-                    <service.icon className="h-6 w-6 text-background" />
+                  <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-105">
+                    <service.icon className="h-5 w-5 text-accent-foreground" />
                   </div>
                   <h5 className="text-xl font-semibold text-foreground mb-4 tracking-tight">
                     {service.title}
@@ -141,7 +146,7 @@ export function Advisory() {
             asChild
             variant="outline"
             size="lg"
-            className="group h-12 px-6 text-base font-medium rounded-none border-foreground/20 hover:bg-foreground hover:text-background transition-all"
+            className="group h-12 px-6 text-base font-medium rounded-none border-accent/30 hover:bg-accent hover:text-accent-foreground transition-all"
           >
             <Link href="/contact?service=advisory">
               Get Advisory Support

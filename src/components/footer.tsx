@@ -10,7 +10,7 @@ export function Footer() {
               Location
             </h3>
             <p className="text-background/80">
-              Milan, Italy
+              Rome & Milan, Italy
             </p>
           </div>
           <div>
@@ -18,10 +18,10 @@ export function Footer() {
               Email
             </h3>
             <a 
-              href="mailto:info@auletta-advisory.com" 
+              href="mailto:info@aulettaadvisory.com" 
               className="text-background/80 hover:text-background transition-colors"
             >
-              info@auletta-advisory.com
+              info@aulettaadvisory.com
             </a>
           </div>
           <div>

@@ -85,8 +85,8 @@ function ContactPageContent() {
     return (
       <main className="min-h-screen flex items-center justify-center px-6">
         <div className="text-center max-w-md">
-          <div className="w-16 h-16 rounded-full bg-foreground flex items-center justify-center mx-auto mb-6">
-            <Check className="h-8 w-8 text-background" />
+          <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mx-auto mb-6">
+            <Check className="h-8 w-8 text-accent-foreground" />
           </div>
           <h1 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
             Thank you!
@@ -97,7 +97,7 @@ function ContactPageContent() {
           <Button
             asChild
             size="lg"
-            className="group h-12 px-6 text-base font-medium rounded-none bg-foreground text-background hover:bg-foreground/90 transition-all"
+            className="group h-12 px-6 text-base font-medium rounded-none bg-accent text-accent-foreground hover:bg-accent/90 transition-all"
           >
             <Link href="/">
               Back to Home
@@ -144,7 +144,7 @@ function ContactPageContent() {
                       <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-2">
                         Locations
                       </p>
-                      <p className="text-foreground">Rome, Italy / Milan, Italy</p>
+                      <p className="text-foreground">Rome & Milan, Italy</p>
                     </div>
                   </div>
 
@@ -197,8 +197,8 @@ function ContactPageContent() {
                         }}
                         className={`px-4 py-2 text-sm font-medium border transition-all w-full ${
                           isChecked
-                            ? "bg-foreground text-background border-foreground"
-                            : "bg-transparent text-foreground border-border hover:border-foreground/50"
+                            ? "bg-accent text-accent-foreground border-accent"
+                            : "bg-transparent text-foreground border-border hover:border-accent/50"
                         }`}
                       >
                         {service.label}
@@ -218,7 +218,7 @@ function ContactPageContent() {
                           <FormControl>
                             <Input
                               placeholder="First Name"
-                              className="h-11 bg-transparent border-0 border-b border-border rounded-none px-0 focus:border-foreground focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/60"
+                              className="h-11 bg-transparent border-0 border-b border-border rounded-none px-0 focus:border-accent focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/60"
                               {...field}
                             />
                           </FormControl>
@@ -234,7 +234,7 @@ function ContactPageContent() {
                           <FormControl>
                             <Input
                               placeholder="Last name"
-                              className="h-11 bg-transparent border-0 border-b border-border rounded-none px-0 focus:border-foreground focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/60"
+                              className="h-11 bg-transparent border-0 border-b border-border rounded-none px-0 focus:border-accent focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/60"
                               {...field}
                             />
                           </FormControl>
@@ -256,7 +256,7 @@ function ContactPageContent() {
                         <Input
                           type="text"
                           placeholder="Your company"
-                          className="h-11 bg-transparent border-0 border-b border-border rounded-none px-0 focus:border-foreground focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/60"
+                          className="h-11 bg-transparent border-0 border-b border-border rounded-none px-0 focus:border-accent focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/60"
                           {...field}
                         />
                       </FormControl>
@@ -276,7 +276,7 @@ function ContactPageContent() {
                         <Input
                           type="email"
                           placeholder="Your email"
-                          className="h-11 bg-transparent border-0 border-b border-border rounded-none px-0 focus:border-foreground focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/60"
+                          className="h-11 bg-transparent border-0 border-b border-border rounded-none px-0 focus:border-accent focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/60"
                           {...field}
                         />
                       </FormControl>
@@ -295,7 +295,7 @@ function ContactPageContent() {
                       <FormControl>
                         <Textarea
                           placeholder="Message"
-                          className="min-h-[120px] bg-transparent border-0 border-b border-border rounded-none px-0 focus:border-foreground focus-visible:ring-0 focus-visible:ring-offset-0 resize-none placeholder:text-muted-foreground/60"
+                          className="min-h-[120px] bg-transparent border-0 border-b border-border rounded-none px-0 focus:border-accent focus-visible:ring-0 focus-visible:ring-offset-0 resize-none placeholder:text-muted-foreground/60"
                           {...field}
                         />
                       </FormControl>
@@ -309,7 +309,7 @@ function ContactPageContent() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-12 text-base font-medium rounded-none bg-foreground text-background hover:bg-foreground/90 transition-all disabled:opacity-50"
+                    className="w-full h-12 text-base font-medium rounded-none bg-accent text-accent-foreground hover:bg-accent/90 transition-all disabled:opacity-50"
                   >
                     {isSubmitting ? "Sending..." : "Submit"}
                   </Button>
