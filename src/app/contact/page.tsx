@@ -1,6 +1,6 @@
 "use client"
 
-import { Suspense, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -38,14 +38,6 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>
 
 export default function ContactPage() {
-  return (
-    <Suspense>
-      <ContactPageContent />
-    </Suspense>
-  )
-}
-
-function ContactPageContent() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const searchParams = useSearchParams()

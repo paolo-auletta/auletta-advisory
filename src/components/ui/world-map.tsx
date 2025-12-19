@@ -1,9 +1,9 @@
 "use client"
 
-import { useRef, useState, useMemo } from "react"
+import { useRef, useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
-import DottedMap from "dotted-map"
 import { X, ExternalLink } from "lucide-react"
+import Image from "next/image"
 
 export interface Investment {
   id: string
@@ -31,16 +31,6 @@ export default function WorldMap({
   const svgRef = useRef<SVGSVGElement>(null)
   const [selectedInvestment, setSelectedInvestment] = useState<Investment | null>(null)
   const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 })
-
-  const svgMap = useMemo(() => {
-    const map = new DottedMap({ height: 200, grid: "diagonal" })
-    return map.getSVG({
-      radius: 0.22,
-      color: "#00000020",
-      shape: "circle",
-      backgroundColor: "white",
-    })
-  }, [])
 
   // Visible map bounds - manually tuned to match the CSS transform
   // CSS: scale(2.5), transformOrigin: "40% 18%", objectPosition: "22% 18%"
@@ -75,16 +65,18 @@ export default function WorldMap({
     <div className="w-full aspect-[2.5/1] relative font-sans">
       {/* Map container with overflow hidden */}
       <div className="absolute inset-0 bg-gradient-to-b from-white to-muted/20 rounded-lg shadow-lg overflow-hidden">
-        <img
-          src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
-          className="h-full w-full object-cover pointer-events-none select-none"
+        <Image
+          src="/world-map.png"
           alt="world map"
+          fill
+          className="object-cover pointer-events-none select-none"
           draggable={false}
           style={{
             objectPosition: "22% 18%",
             transform: "scale(2.5)",
             transformOrigin: "40% 18%"
           }}
+          priority
         />
       </div>
       {/* SVG overlay for dots - outside overflow hidden container */}
