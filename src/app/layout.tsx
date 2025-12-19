@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
 const satoshi = localFont({
@@ -19,7 +20,7 @@ const satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Auletta Advisory",
+  title: "AulettaAdvisory",
   description: "Strategic advisory for venture capital and M&A, angel investing, and AI infrastructure solutions.",
 };
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body
         className={`${satoshi.variable} font-sans antialiased`}
       >
+        <Navbar />
         {children}
         <Footer />
       </body>

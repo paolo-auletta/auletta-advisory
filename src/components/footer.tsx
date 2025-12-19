@@ -42,7 +42,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-background/50">
-            © {new Date().getFullYear()} Auletta Advisory. All rights reserved.
+            © {new Date().getFullYear()} AulettaAdvisory. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link href="#" className="text-sm text-background/50 hover:text-background transition-colors">

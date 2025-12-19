@@ -22,7 +22,7 @@ export function Hero() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-foreground mb-6">
-            Auletta Advisory
+            AulettaAdvisory
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl">
