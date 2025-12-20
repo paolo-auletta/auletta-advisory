@@ -239,6 +239,112 @@ export function Investing() {
           </div>
         </div>
 
+        {/* Incubator Section */}
+        <div className="mt-24 md:mt-32">
+          <div className="mb-12">
+            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
+              Incubator
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-foreground leading-tight">
+                Selected startups from our incubator program
+              </h3>
+              <div className="flex flex-col justify-end">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  From idea to execution, we provide hands-on support to transform visionary concepts into thriving businesses.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                id: 1,
+                name: "MaturaMente",
+                sector: "EdTech",
+                description: "AI-powered study platform for Italian students preparing for the Esame di Maturità, featuring curated practice content, simulations, and personalized learning support.",
+                year: "2024",
+                image: "/incubator/maturamente.png",
+                logo: "/incubator/maturamente-icon.jpeg",
+                website: "https://maturamente.it",
+              },
+              {
+                id: 2,
+                name: "Roamlit",
+                sector: "Travel Tech",
+                description: "Mobile-first travel app for discovering and exploring cities through curated guides and smart recommendations, starting with Milan and expanding across Europe.",
+                year: "2024",
+                image: "/incubator/roamlit.png",
+                logo: "/incubator/roamlit-logo.png",
+                website: "https://roamlit.com",
+              },
+              {
+                id: 3,
+                name: "Cravit",
+                sector: "Food Tech",
+                description: "Social app for exploring food with friends through personalized taste missions, turning restaurant discovery into shared adventures with custom leaderboards.",
+                year: "2024",
+                image: "/incubator/cravit.png",
+                logo: "/incubator/cravit-icon.png",
+                website: "https://www.getcravit.com/",
+              },
+            ].map((project) => (
+              <div
+                key={project.id}
+                className="group border border-border bg-white overflow-hidden hover:border-accent/50 transition-all duration-300"
+              >
+                <div className="aspect-[16/9] relative overflow-hidden bg-muted">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/20" />
+                  {project.logo && (
+                    <div className="absolute top-4 left-4 w-12 h-12 rounded-lg overflow-hidden bg-white shadow-lg">
+                      <img
+                        src={project.logo}
+                        alt={`${project.name} logo`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                </div>
+                <div className="p-8">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                      {project.year}
+                    </span>
+                    <span className="text-muted-foreground/30">•</span>
+                    <span className="text-xs text-muted-foreground">
+                      {project.sector}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <h4 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors">
+                      {project.name}
+                    </h4>
+                    {project.website && (
+                      <a
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="shrink-0 text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    )}
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="mt-12">
           <Button
             asChild

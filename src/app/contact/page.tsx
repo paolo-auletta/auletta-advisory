@@ -48,6 +48,7 @@ export default function ContactPage() {
 function ContactPageContent() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const searchParams = useSearchParams()
 
   const form = useForm<FormValues>({
@@ -75,10 +76,30 @@ function ContactPageContent() {
 
   async function onSubmit(data: FormValues) {
     setIsSubmitting(true)
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    console.log(data)
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    setError(null)
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send message")
+      }
+
+      setIsSubmitted(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send message. Please try again.")
+      console.error("Error submitting form:", err)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
@@ -303,6 +324,13 @@ function ContactPageContent() {
                     </FormItem>
                   )}
                 />
+
+                {/* Error Message */}
+                {error && (
+                  <div className="p-4 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900 text-red-800 dark:text-red-200 text-sm">
+                    {error}
+                  </div>
+                )}
 
                 {/* Submit Button */}
                 <div className="pt-6">

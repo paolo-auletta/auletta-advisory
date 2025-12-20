@@ -11,7 +11,7 @@ const stats = [
     label: "Companies Advised",
   },
   {
-    value: "€2.5B+",
+    value: "€3.5B+",
     label: "Deal Value",
   },
   {

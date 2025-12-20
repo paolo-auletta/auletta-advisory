@@ -45,7 +45,10 @@ export function Footer() {
             © {new Date().getFullYear()} AulettaAdvisory. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-sm text-background/50 hover:text-background transition-colors">
+            <Link href="/terms-of-use" className="text-sm text-background/50 hover:text-background transition-colors">
+              Terms of Use
+            </Link>
+            <Link href="/privacy-policy" className="text-sm text-background/50 hover:text-background transition-colors">
               Privacy Policy
             </Link>
           </div>
