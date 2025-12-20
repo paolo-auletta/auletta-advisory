@@ -1,3 +1,32 @@
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Terms of Use",
+  description:
+    "Terms of Use for Auletta Advisory website. Read our terms and conditions governing the use of our website and services.",
+  keywords: [
+    "terms of use",
+    "terms and conditions",
+    "legal terms",
+    "website terms",
+    "Auletta Advisory terms",
+  ],
+  openGraph: {
+    title: "Terms of Use | Auletta Advisory",
+    description:
+      "Terms of Use for Auletta Advisory website and services.",
+    url: "https://www.aulettaadvisory.com/terms-of-use",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.aulettaadvisory.com/terms-of-use",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
 export default function TermsOfUsePage() {
   return (
     <div className="min-h-screen bg-background">

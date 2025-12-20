@@ -201,31 +201,38 @@ function ContactPageContent() {
                 <p className="text-sm font-medium text-muted-foreground tracking-wider mb-4">
                   What are you interested in?
                 </p>
-                <div className="flex w-full justify-space-between gap-4">
-                  {services.map((service) => {
-                    const isChecked = selectedServices?.includes(service.id)
-                    return (
-                      <button
+                <div>
+                  <div className="flex w-full justify-space-between gap-4">
+                    {services.map((service) => {
+                      const isChecked = selectedServices?.includes(service.id)
+                      return (
+                        <button
                         key={service.id}
                         type="button"
                         onClick={() => {
                           const current = form.getValues("services")
                           if (isChecked) {
-                            form.setValue("services", current.filter((v) => v !== service.id))
+                            form.setValue("services", current.filter((v) => v !== service.id), { shouldValidate: true })
                           } else {
-                            form.setValue("services", [...current, service.id])
+                            form.setValue("services", [...current, service.id], { shouldValidate: true })
                           }
                         }}
                         className={`px-4 py-2 text-sm font-medium border transition-all w-full ${
                           isChecked
-                            ? "bg-accent text-accent-foreground border-accent"
-                            : "bg-transparent text-foreground border-border hover:border-accent/50"
+                          ? "bg-accent text-accent-foreground border-accent"
+                          : "bg-transparent text-foreground border-border hover:border-accent/50"
                         }`}
-                      >
-                        {service.label}
-                      </button>
-                    )
-                  })}
+                        >
+                          {service.label}
+                        </button>
+                      )
+                    })}
+                  </div>
+                  {form.formState.errors.services && (
+                    <p className="text-destructive text-sm mt-2">
+                      {form.formState.errors.services.message}
+                    </p>
+                  )}
                 </div>
                 {/* Name Fields */}
                 <div>

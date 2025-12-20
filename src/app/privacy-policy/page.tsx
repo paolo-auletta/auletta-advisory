@@ -1,3 +1,32 @@
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Auletta Advisory's Privacy Policy. Learn how we collect, use, and protect your personal information in compliance with GDPR and applicable data protection laws.",
+  keywords: [
+    "privacy policy",
+    "data protection",
+    "GDPR compliance",
+    "personal information",
+    "Auletta Advisory privacy",
+  ],
+  openGraph: {
+    title: "Privacy Policy | Auletta Advisory",
+    description:
+      "Learn how Auletta Advisory collects, uses, and protects your personal information.",
+    url: "https://www.aulettaadvisory.com/privacy-policy",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.aulettaadvisory.com/privacy-policy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
 export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-background">
