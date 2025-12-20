@@ -10,28 +10,22 @@ const capabilities = [
     label: "THE SHIELD",
     title: "Regulatory-First AI Governance",
     description:
-      "While most firms treat compliance as an afterthought, we bake Regulatory Frameworks into the development lifecycle. This capability ensures that every model deployed is \"Audit-Ready\" from day one.",
-    highlight: "Regulatory Frameworks",
-    value:
-      "We eliminate the \"compliance bottleneck,\" allowing our clients to move from pilot to production faster than competitors.",
+      "We treat regulatory frameworks as a foundational architectural requirement rather than a post-development hurdle. This 'Compliance-by-Design' philosophy ensures AI models are inherently audit-ready, drastically accelerating the transition from pilot to full-scale production.",
+    highlight: "'Compliance-by-Design'",
   },
   {
     label: "THE ENGINE",
     title: "Scalable ML Intelligence in High-Stakes Environments",
     description:
-      "We bridge the gap between \"Lab AI\" and \"Enterprise AI.\" Our expertise lies in deploying scalable ML architectures specifically designed for the data sensitivities of finance and healthcare.",
-    highlight: "scalable ML architectures",
-    value:
-      "We ensure AI doesn't just work in a demo—it scales across global operations without compromising data integrity or system stability, providing a robust foundation for long-term innovation.",
+      "We transition AI from experimental prototypes to mission-critical enterprise systems. Our expertise lies in architecting industrial-grade ML frameworks engineered specifically for high-stakes environments, ensuring that global scalability never comes at the cost of system resilience or data sovereignty.",
+    highlight: "industrial-grade ML frameworks",
   },
   {
     label: "THE MULTIPLIER",
     title: "Strategic Value & M&A Engineering",
     description:
-      "Leveraging our background as Venture Builders and M&A Advisors, we ensure AI adoption is tied directly to the balance sheet. We don't just look for \"cool\" use cases; we look for \"valuable\" ones that increase enterprise value.",
-    highlight: "Venture Builders and M&A Advisors",
-    value:
-      "We optimize technical debt and IP portfolio, ensuring that AI investments make the company more attractive for future M&A activity, partnerships, or public offerings.",
+      "We don’t just build AI; we engineer enterprise value. Leveraging our M&A and venture expertise, we focus on the intersection of intelligence and profitability. We ensure that every AI investment is a strategic milestone toward a more valuable, scalable, and acquirable business.",
+    highlight: "engineer enterprise value.",
   },
 ]
 
@@ -136,7 +130,7 @@ export function AISolutions() {
         {/* Capabilities Grid */}
         <div className="mb-16 md:mb-20">
           <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-8">
-            Our Capabilities
+            Our Approach
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -161,14 +155,6 @@ export function AISolutions() {
                     <span className="font-medium text-foreground">{capability.highlight}</span>
                     {descriptionParts[1]}
                   </p>
-                  <div className="border-t border-border pt-5 mt-auto">
-                    <h5 className="text-xs font-semibold text-foreground uppercase tracking-wider mb-3">
-                      Value Created
-                    </h5>
-                    <p className="text-muted-foreground text-[14px] leading-relaxed">
-                      {capability.value}
-                    </p>
-                  </div>
                 </div>
               )
             })}

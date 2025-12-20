@@ -29,7 +29,7 @@ export function Footer() {
               Connect
             </h3>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/carmine-auletta-965170" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-background/80 hover:text-background transition-colors"
@@ -47,9 +47,6 @@ export function Footer() {
           <div className="flex gap-6">
             <Link href="#" className="text-sm text-background/50 hover:text-background transition-colors">
               Privacy Policy
-            </Link>
-            <Link href="#" className="text-sm text-background/50 hover:text-background transition-colors">
-              Terms of Service
             </Link>
           </div>
         </div>

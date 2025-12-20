@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "motion/react"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 const NAV_LINKS = [
   { label: "Advisory", href: "#advisory" },
@@ -79,6 +80,12 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden items-center justify-between bg-background/95 px-6 py-3 shadow-md backdrop-blur-sm border border-border sm:flex">
           <div className="flex items-center gap-3">
+            {/* <Image
+              src="/logo-2.png"
+              alt="Logo"
+              width={160}
+              height={160}
+            /> */}
             <Link href="/" className="text-xl font-medium text-foreground">
               AulettaAdvisory
             </Link>

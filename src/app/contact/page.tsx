@@ -160,7 +160,7 @@ function ContactPageContent() {
                       Back to Home
                     </Link>
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/carmine-auletta-965170"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
