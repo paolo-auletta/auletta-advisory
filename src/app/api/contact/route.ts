@@ -50,8 +50,8 @@ Services: ${servicesFormatted}`
       )
     }
 
-    // Send email using Resend with verified domain
-    const result = await resend.emails.send({
+    // Send notification email to Auletta Advisory
+    const notificationResult = await resend.emails.send({
       from: "Auletta Advisory <noreply@aulettaadvisory.com>",
       to: "info@aulettaadvisory.com",
       replyTo: data.email,
@@ -60,10 +60,37 @@ Services: ${servicesFormatted}`
       html: emailBody.replace(/\n/g, "<br>"),
     })
 
-    console.log("Email sent successfully:", result)
+    // Send confirmation email to the user
+    const confirmationSubject = "Thank you for contacting Auletta Advisory"
+    const confirmationBody = `Dear ${data.firstName},
+
+Thank you for reaching out to Auletta Advisory. We have received your inquiry regarding ${servicesFormatted.toLowerCase()}.
+
+Our team will review your message and get back to you as soon as possible, typically within 1-2 business days.
+
+In the meantime, if you have any urgent questions, please don't hesitate to reach out to us directly at info@aulettaadvisory.com.
+
+Best regards,
+The Auletta Advisory Team
+
+---
+This is an automated confirmation email. Please do not reply to this message.`
+
+    const confirmationResult = await resend.emails.send({
+      from: "Auletta Advisory <noreply@aulettaadvisory.com>",
+      to: data.email,
+      subject: confirmationSubject,
+      text: confirmationBody,
+      html: confirmationBody.replace(/\n/g, "<br>"),
+    })
 
     return NextResponse.json(
-      { success: true, message: "Email sent successfully", emailId: result.data?.id },
+      { 
+        success: true, 
+        message: "Emails sent successfully", 
+        notificationEmailId: notificationResult.data?.id,
+        confirmationEmailId: confirmationResult.data?.id
+      },
       { status: 200 }
     )
   } catch (error) {

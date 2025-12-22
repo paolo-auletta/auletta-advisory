@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { Analytics } from "@vercel/analytics/next"
 
 const satoshi = localFont({
   src: [
@@ -303,6 +304,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
