@@ -46,7 +46,7 @@ export function Footer() {
               © {new Date().getFullYear()} AulettaAdvisory. All rights reserved.
             </p>
             <p className="text-sm text-background/50">
-              Auletta Advisory Srl - P.IVA: 18319361004
+              Auletta Advisory Srl - P.IVA: 18319361004 - LEI: 984500BDBB738338DH06
             </p>
           </div>
           <div className="flex gap-6">
